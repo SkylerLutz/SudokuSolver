@@ -23,7 +23,7 @@ static int LENGTH_OF_SUDOKU_BOARD = 9;
     
     self = [super initWithCoder:aDecoder];
     if (self) {
-        
+        self.isSolving = NO;
         self.fields = [[NSMutableArray alloc] init];
         
         CGFloat boardWidth = self.frame.size.width;
@@ -47,6 +47,7 @@ static int LENGTH_OF_SUDOKU_BOARD = 9;
                 textField.textAlignment = NSTextAlignmentCenter;
                 textField.keyboardType = UIKeyboardTypeNumberPad;
                 textField.delegate = self;
+                textField.textColor = [UIColor redColor];
                 [row addObject:textField];
                 [self addSubview:textField];
                 
@@ -90,6 +91,15 @@ static int LENGTH_OF_SUDOKU_BOARD = 9;
     
     UITextField *field = [[self.fields objectAtIndex:row] objectAtIndex:col];
     field.text = [number stringValue];
+    
+    if (self.isSolving) {
+        
+        field.textColor = [UIColor blackColor];
+    }
+    else {
+        
+        field.textColor = [UIColor redColor];
+    }
 }
 
 #pragma mark UITextField Delegate Methods

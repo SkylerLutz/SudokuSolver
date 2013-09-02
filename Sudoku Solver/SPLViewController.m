@@ -43,14 +43,20 @@ static int LENGTH_OF_SUDOKU_BOARD = 9;
 #pragma mark SPLSudoku Delegate methods
 - (void)didSolve:(NSArray *)solution {
     
+    NSArray *board = [self.boardView squareValues];
+    self.boardView.isSolving = YES;
     for (int i=0; i < LENGTH_OF_SUDOKU_BOARD; i++) {
         
         for (int j=0; j < LENGTH_OF_SUDOKU_BOARD; j++) {
             
             NSNumber *num = [[solution objectAtIndex:i] objectAtIndex:j];
+            if ([board[i][j] isEqualToNumber:num]) {
+                continue;
+            }
             [self.boardView updateSquare:i col:j withNumber:num];
         }
     }
+    self.boardView.isSolving = NO;
 }
 - (void)cannotBeSolved {
     [[[UIAlertView alloc] initWithTitle:@"Cannot be solved"

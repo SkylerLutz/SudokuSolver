@@ -12,5 +12,5 @@
 
 - (NSArray *)squareValues;
 - (void)updateSquare:(NSInteger)row col:(NSInteger)col withNumber:(NSNumber *)number;
-
+@property (assign, nonatomic) BOOL isSolving;
 @end
