@@ -18,6 +18,8 @@
 		D46082D817D3B65E0021A2B6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D46082D717D3B65E0021A2B6 /* Default-568h@2x.png */; };
 		D46082DB17D3B65E0021A2B6 /* SPLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46082DA17D3B65E0021A2B6 /* SPLViewController.m */; };
 		D46082DE17D3B65E0021A2B6 /* SPLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46082DC17D3B65E0021A2B6 /* SPLViewController.xib */; };
+		D46082E617D3B68A0021A2B6 /* SPLSudokuBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = D46082E517D3B68A0021A2B6 /* SPLSudokuBoard.m */; };
+		D46082E917D3BB560021A2B6 /* SPLSudoku.m in Sources */ = {isa = PBXBuildFile; fileRef = D46082E817D3BB560021A2B6 /* SPLSudoku.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		D46082D917D3B65E0021A2B6 /* SPLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLViewController.h; sourceTree = "<group>"; };
 		D46082DA17D3B65E0021A2B6 /* SPLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLViewController.m; sourceTree = "<group>"; };
 		D46082DD17D3B65E0021A2B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SPLViewController.xib; sourceTree = "<group>"; };
+		D46082E417D3B68A0021A2B6 /* SPLSudokuBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSudokuBoard.h; sourceTree = "<group>"; };
+		D46082E517D3B68A0021A2B6 /* SPLSudokuBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSudokuBoard.m; sourceTree = "<group>"; };
+		D46082E717D3BB560021A2B6 /* SPLSudoku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSudoku.h; sourceTree = "<group>"; };
+		D46082E817D3BB560021A2B6 /* SPLSudoku.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSudoku.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D41C19C917D3E5BE00B8E08D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D46082E417D3B68A0021A2B6 /* SPLSudokuBoard.h */,
+				D46082E517D3B68A0021A2B6 /* SPLSudokuBoard.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D41C19CA17D3E5C400B8E08D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D46082E717D3BB560021A2B6 /* SPLSudoku.h */,
+				D46082E817D3BB560021A2B6 /* SPLSudoku.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D41C19CB17D3E5CA00B8E08D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D46082D917D3B65E0021A2B6 /* SPLViewController.h */,
+				D46082DA17D3B65E0021A2B6 /* SPLViewController.m */,
+				D46082DC17D3B65E0021A2B6 /* SPLViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D41C19CC17D3E5D000B8E08D /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D46082D017D3B65E0021A2B6 /* SPLAppDelegate.h */,
+				D46082D117D3B65E0021A2B6 /* SPLAppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
 		D46082B517D3B65E0021A2B6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +126,10 @@
 		D46082C717D3B65E0021A2B6 /* Sudoku Solver */ = {
 			isa = PBXGroup;
 			children = (
-				D46082D017D3B65E0021A2B6 /* SPLAppDelegate.h */,
-				D46082D117D3B65E0021A2B6 /* SPLAppDelegate.m */,
-				D46082D917D3B65E0021A2B6 /* SPLViewController.h */,
-				D46082DA17D3B65E0021A2B6 /* SPLViewController.m */,
-				D46082DC17D3B65E0021A2B6 /* SPLViewController.xib */,
+				D41C19CC17D3E5D000B8E08D /* Delegate */,
+				D41C19CB17D3E5CA00B8E08D /* Controller */,
+				D41C19C917D3E5BE00B8E08D /* View */,
+				D41C19CA17D3E5C400B8E08D /* Model */,
 				D46082C817D3B65E0021A2B6 /* Supporting Files */,
 			);
 			path = "Sudoku Solver";
@@ -177,6 +219,8 @@
 				D46082CE17D3B65E0021A2B6 /* main.m in Sources */,
 				D46082D217D3B65E0021A2B6 /* SPLAppDelegate.m in Sources */,
 				D46082DB17D3B65E0021A2B6 /* SPLViewController.m in Sources */,
+				D46082E617D3B68A0021A2B6 /* SPLSudokuBoard.m in Sources */,
+				D46082E917D3BB560021A2B6 /* SPLSudoku.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +343,7 @@
 				D46082E317D3B65E0021A2B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

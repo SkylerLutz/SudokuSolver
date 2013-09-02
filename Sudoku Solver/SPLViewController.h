@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SPLSudokuBoard;
 
 @interface SPLViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet SPLSudokuBoard *boardView;
+- (IBAction)solve:(id)sender;
+- (IBAction)clear:(id)sender;
 @end
