@@ -24,13 +24,12 @@ static int LENGTH_OF_SUDOKU_BOARD = 9;
 #pragma mark Instance Methods
 - (void)solve {
 
-    if ([self isValidPuzzle]) {
-        if ([self solve:0]) {
-            [self.delegate didSolve:self.board];
-            return;
-        }
+    if ([self isValidPuzzle] && [self solve:0]) {
+        [self.delegate didSolve:self.board];
     }
-    [self.delegate cannotBeSolved];
+    else {
+        [self.delegate cannotBeSolved];
+    }
 }
 - (void)clear {
     
@@ -46,7 +45,7 @@ static int LENGTH_OF_SUDOKU_BOARD = 9;
 #pragma mark Private helping Methods
 - (BOOL)solve:(int)cell {
     
-    if(cell == LENGTH_OF_SUDOKU_BOARD*LENGTH_OF_SUDOKU_BOARD){
+    if(cell == LENGTH_OF_SUDOKU_BOARD * LENGTH_OF_SUDOKU_BOARD){
         return true;
     }
     int row = cell / LENGTH_OF_SUDOKU_BOARD;
