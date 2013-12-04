@@ -46,7 +46,7 @@ static int LENGTH_OF_SUDOKU_BOARD = 9;
 - (BOOL)solve:(int)cell {
     
     if(cell == LENGTH_OF_SUDOKU_BOARD * LENGTH_OF_SUDOKU_BOARD){
-        return true;
+        return YES;
     }
     int row = cell / LENGTH_OF_SUDOKU_BOARD;
     int col = cell % LENGTH_OF_SUDOKU_BOARD;
@@ -58,7 +58,7 @@ static int LENGTH_OF_SUDOKU_BOARD = 9;
             if([self isValid:cell]) {
                 
                 if([self solve:cell+1]) {
-                    return true;
+                    return YES;
                 }
             }
             self.board[col][row] = @(0);
@@ -66,10 +66,10 @@ static int LENGTH_OF_SUDOKU_BOARD = 9;
     }
     else { // the space is permanately filled in
         if([self solve:cell+1]) {
-            return true;
+            return YES;
         }
     }
-    return false;
+    return NO;
 }
 
 -(BOOL)isValid:(int)cell {
